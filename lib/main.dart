@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myecommerce/home/home_food_page.dart';
+import 'package:myecommerce/home/main_food_page.dart';
 
 void main() {
   runApp(const MyApp());
