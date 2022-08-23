@@ -37,6 +37,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      // Slider section
       children: [
         Container(
           color: const Color.fromARGB(156, 240, 240, 240),
@@ -49,6 +50,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             },
           ),
         ),
+        // dots section
         DotsIndicator(
           dotsCount: 5,
           position: _currPageValue,
@@ -64,6 +66,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
     );
   }
 
+  // maths for scaling the slider container
   Widget _buildPageItem(int index) {
     Matrix4 matrix = Matrix4.identity();
     if (index == _currPageValue.floor()) {
@@ -96,9 +99,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
-            margin: const EdgeInsets.only(left: 10, right: 10),
+            margin: EdgeInsets.only(
+                left: Dimensions.width10, right: Dimensions.width10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.raduis30),
               color: index.isEven
                   ? const Color(0xff69c5df)
                   : const Color(0xFF9294cc),
@@ -112,9 +116,12 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewTextContainer,
-              margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
+              margin: EdgeInsets.only(
+                  left: Dimensions.width30,
+                  right: Dimensions.width30,
+                  bottom: Dimensions.height30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(Dimensions.raduis20),
                 color: Colors.white,
                 boxShadow: const [
                   BoxShadow(
