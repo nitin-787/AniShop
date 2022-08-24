@@ -40,7 +40,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       // Slider section
       children: [
         Container(
-          color: const Color.fromARGB(156, 240, 240, 240),
+          color: Colors.white,
           height: Dimensions.pageView,
           child: PageView.builder(
             controller: pageController,
@@ -61,6 +61,110 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
           ),
+        ),
+        // Popular text
+        SizedBox(width: Dimensions.height30),
+        Container(
+          margin: EdgeInsets.only(left: Dimensions.width30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: "Popular"),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(text: ".", color: Colors.black26),
+              ),
+              SizedBox(width: Dimensions.width10),
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: SmallText(text: "Food Paring"),
+              )
+            ],
+          ),
+        ),
+        // list of food and images
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return Container(
+              margin: EdgeInsets.only(
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+                bottom: Dimensions.height10,
+              ),
+              child: Row(
+                children: [
+                  // image Section
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.raduis20),
+                      color: Colors.white38,
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/image/food1.png"),
+                      ),
+                    ),
+                  ),
+                  // Text Container
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(Dimensions.raduis20),
+                          bottomRight: Radius.circular(Dimensions.raduis20),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: Dimensions.width10,
+                          right: Dimensions.width10,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: Dimensions.height10),
+                            BigText(text: "Paratha in punjab is tasty"),
+                            SizedBox(height: Dimensions.height10),
+                            SmallText(text: "Paratha in punjab is tasty"),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndTextWidget(
+                                  icon: Icons.circle_sharp,
+                                  text: "Normal",
+                                  iconColor: AppColors.iconColor1,
+                                ),
+                                const SizedBox(width: 10),
+                                IconAndTextWidget(
+                                  icon: Icons.location_on,
+                                  text: "1.7km",
+                                  iconColor: AppColors.mainColor,
+                                ),
+                                const SizedBox(width: 10),
+                                IconAndTextWidget(
+                                  icon: Icons.access_time_rounded,
+                                  text: "32min",
+                                  iconColor: AppColors.iconColor2,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
         ),
       ],
     );
@@ -108,7 +212,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   : const Color(0xFF9294cc),
               image: const DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/image/anime1.png"),
+                image: AssetImage("assets/image/food1.png"),
               ),
             ),
           ),
@@ -145,7 +249,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Coffee Mug Gojo"),
+                    BigText(text: "Paratha"),
                     SizedBox(
                       height: Dimensions.height10,
                     ),
