@@ -40,7 +40,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
       // Slider section
       children: [
         Container(
-          color: Colors.white,
           height: Dimensions.pageView,
           child: PageView.builder(
             controller: pageController,
@@ -50,6 +49,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             },
           ),
         ),
+
         // dots section
         DotsIndicator(
           dotsCount: 5,
@@ -62,6 +62,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+
         // Popular text
         SizedBox(width: Dimensions.height30),
         Container(
@@ -77,12 +78,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               SizedBox(width: Dimensions.width10),
               Container(
-                margin: const EdgeInsets.only(bottom: 3),
+                margin: const EdgeInsets.only(bottom: 2),
                 child: SmallText(text: "Food Paring"),
               )
             ],
           ),
         ),
+
         // list of food and images
         ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
@@ -110,6 +112,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                       ),
                     ),
                   ),
+
                   // Text Container
                   Expanded(
                     child: Container(
@@ -130,10 +133,10 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: Dimensions.height10),
                             BigText(text: "Paratha in punjab is tasty"),
                             SizedBox(height: Dimensions.height10),
-                            SmallText(text: "Paratha in punjab is tasty"),
+                            SmallText(text: "With Buttur and  lassi"),
+                            SizedBox(height: Dimensions.height10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
