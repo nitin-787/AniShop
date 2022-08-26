@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:myecommerce/utils/dimensions.dart';
 import 'package:myecommerce/widgets/small_text.dart';
 
 class IconAndTextWidget extends StatelessWidget {
   final IconData icon;
   final String text;
   final Color iconColor;
+  final double iconSize;
 
-  const IconAndTextWidget(
-      {Key? key,
-      required this.icon,
-      required this.text,
-      required this.iconColor})
-      : super(key: key);
+  const IconAndTextWidget({
+    Key? key,
+    required this.icon,
+    required this.text,
+    required this.iconColor,
+    required this.iconSize,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class IconAndTextWidget extends StatelessWidget {
         Icon(
           icon,
           color: iconColor,
-          size: Dimensions.textIconSize12,
+          size: iconSize,
         ),
         const SizedBox(width: 5),
         SmallText(text: text)

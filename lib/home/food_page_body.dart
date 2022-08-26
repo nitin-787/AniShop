@@ -143,18 +143,21 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                                 IconAndTextWidget(
                                   icon: Icons.circle_sharp,
                                   text: "Normal",
+                                  iconSize: Dimensions.textIconSize12,
                                   iconColor: AppColors.iconColor1,
                                 ),
                                 const SizedBox(width: 10),
                                 IconAndTextWidget(
                                   icon: Icons.location_on,
                                   text: "1.7km",
+                                  iconSize: Dimensions.textIconSize12,
                                   iconColor: AppColors.mainColor,
                                 ),
                                 const SizedBox(width: 10),
                                 IconAndTextWidget(
                                   icon: Icons.access_time_rounded,
                                   text: "32min",
+                                  iconSize: Dimensions.textIconSize12,
                                   iconColor: AppColors.iconColor2,
                                 )
                               ],
@@ -284,18 +287,21 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                         IconAndTextWidget(
                           icon: Icons.circle_sharp,
                           text: "Normal",
+                          iconSize: Dimensions.iconSize24,
                           iconColor: AppColors.iconColor1,
                         ),
                         const SizedBox(width: 10),
                         IconAndTextWidget(
                           icon: Icons.location_on,
                           text: "1.7km",
+                          iconSize: Dimensions.iconSize24,
                           iconColor: AppColors.mainColor,
                         ),
                         const SizedBox(width: 10),
                         IconAndTextWidget(
                           icon: Icons.access_time_rounded,
                           text: "32min",
+                          iconSize: Dimensions.iconSize24,
                           iconColor: AppColors.iconColor2,
                         )
                       ],
