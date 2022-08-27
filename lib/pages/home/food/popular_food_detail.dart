@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myecommerce/utils/colors.dart';
 import 'package:myecommerce/utils/dimensions.dart';
 import 'package:myecommerce/widgets/app_column.dart';
 import 'package:myecommerce/widgets/app_icon.dart';
+import 'package:myecommerce/widgets/big_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -9,6 +11,7 @@ class PopularFoodDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -55,10 +58,74 @@ class PopularFoodDetail extends StatelessWidget {
                 ),
                 color: Colors.white,
               ),
-              child: const Appcolumn(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Appcolumn(text: "Paratha"),
+                  SizedBox(height: Dimensions.height20),
+                  BigText(text: "Introduce")
+                ],
+              ),
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: Dimensions.bottomHeightBar,
+        padding: EdgeInsets.only(
+          top: Dimensions.height20,
+          bottom: Dimensions.height15,
+          left: Dimensions.width20,
+          right: Dimensions.width20,
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.buttonBackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.raduis20 * 2),
+            topRight: Radius.circular(Dimensions.raduis20 * 2),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height20,
+                bottom: Dimensions.height20,
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(Dimensions.raduis20),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.signColor),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.width10 / 2),
+                  Icon(Icons.add, color: AppColors.signColor),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                top: Dimensions.height20,
+                bottom: Dimensions.height20,
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+              ),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(Dimensions.raduis20),
+                  color: AppColors.mainColor),
+              child: BigText(
+                text: "\$10 | Add to cart",
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
