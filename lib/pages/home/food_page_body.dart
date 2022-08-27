@@ -253,7 +253,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               child: Container(
                 padding: EdgeInsets.only(
                     top: Dimensions.height15, left: 15, right: 15),
-                child: const Appcolumn(),
+                child: const Appcolumn(text: "Paratha"),
               ),
             ),
           ),

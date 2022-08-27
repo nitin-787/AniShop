@@ -6,7 +6,8 @@ import 'package:myecommerce/widgets/icon_and_text_widget.dart';
 import 'package:myecommerce/widgets/small_text.dart';
 
 class Appcolumn extends StatelessWidget {
-  const Appcolumn({Key? key}) : super(key: key);
+  final String text;
+  const Appcolumn({Key? key, required this.text}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,10 @@ class Appcolumn extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          BigText(text: "Paratha"),
+          BigText(
+            text: text,
+            size: Dimensions.font26,
+          ),
           SizedBox(
             height: Dimensions.height10,
           ),
