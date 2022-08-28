@@ -4,6 +4,7 @@ import 'package:myecommerce/utils/dimensions.dart';
 import 'package:myecommerce/widgets/app_column.dart';
 import 'package:myecommerce/widgets/app_icon.dart';
 import 'package:myecommerce/widgets/big_text.dart';
+import 'package:myecommerce/widgets/expandable_text.dart';
 
 class PopularFoodDetail extends StatelessWidget {
   const PopularFoodDetail({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class PopularFoodDetail extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          // backgorund image
           Positioned(
             left: 0,
             right: 0,
@@ -28,6 +30,8 @@ class PopularFoodDetail extends StatelessWidget {
               ),
             ),
           ),
+
+          // icon widget
           Positioned(
             top: Dimensions.height45,
             left: Dimensions.width20,
@@ -40,6 +44,8 @@ class PopularFoodDetail extends StatelessWidget {
               ],
             ),
           ),
+
+          // introduction of food
           Positioned(
             left: 0,
             right: 0,
@@ -63,7 +69,15 @@ class PopularFoodDetail extends StatelessWidget {
                 children: [
                   const Appcolumn(text: "Paratha"),
                   SizedBox(height: Dimensions.height20),
-                  BigText(text: "Introduce")
+                  BigText(text: "Introduce"),
+                  SizedBox(height: Dimensions.height20),
+                  const Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpadableTextWidget(
+                          text:
+                              "Gubergren amet est erat tempor invidunt sed elitr rebum, amet vero dolores takimata eos diam, et accusam no dolore elitr voluptua, vero at et lorem dolor ea diam voluptua. No dolores ut sanctus erat et, dolor sit voluptua tempor erat sit sit diam et, elitr amet eos stet erat rebum. Rebum est labore et dolores sed sanctus, no sed takimata et amet, ipsum sit eirmod erat ipsum dolor. Rebum dolore.Gubergren amet est erat tempor invidunt sed elitr rebum, amet vero dolores takimata eos diam, et accusam no dolore elitr voluptua, vero at et lorem dolor ea diam voluptua. No dolores ut sanctus erat et, dolor sit voluptua tempor erat sit sit diam et, elitr amet eos stet erat rebum. Rebum est labore et dolores sed sanctus, no sed takimata et amet, ipsum sit eirmod erat ipsum dolor. Rebum dolore. Gubergren amet est erat tempor invidunt sed elitr rebum, amet vero dolores takimata eos diam, et accusam no dolore elitr voluptua, vero at et lorem dolor ea diam voluptua. No dolores ut sanctus erat et, dolor sit voluptua tempor erat sit sit diam et, elitr amet eos stet erat rebum. Rebum est labore et dolores sed sanctus, no sed takimata et amet, ipsum sit eirmod erat ipsum dolor. Rebum dolore."),
+                    ),
+                  ),
                 ],
               ),
             ),
