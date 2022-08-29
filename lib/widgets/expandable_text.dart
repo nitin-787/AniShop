@@ -5,7 +5,10 @@ import 'package:myecommerce/widgets/small_text.dart';
 
 class ExpadableTextWidget extends StatefulWidget {
   final String text;
-  const ExpadableTextWidget({Key? key, required this.text}) : super(key: key);
+  const ExpadableTextWidget({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
 
   @override
   State<ExpadableTextWidget> createState() => ExpadableTextWidgetState();
@@ -58,7 +61,8 @@ class ExpadableTextWidgetState extends State<ExpadableTextWidget> {
                   child: Row(
                     children: [
                       SmallText(
-                        text: "show more",
+                        size: Dimensions.font16,
+                        text: hiddenText ? "show more" : "show less",
                         color: AppColors.mainColor,
                       ),
                       Icon(
