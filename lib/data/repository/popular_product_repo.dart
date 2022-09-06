@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 import 'package:myecommerce/data/api/api_client.dart';
 
-class PopularProdeuctRepo extends GetxService {
+class PopularProductRepo extends GetxService {
   final ApiClient apiClient;
 
-  PopularProdeuctRepo({required this.apiClient});
+  PopularProductRepo({required this.apiClient});
 
   Future<Response> getPopularProductList() async {
     return await apiClient.getData("url");
